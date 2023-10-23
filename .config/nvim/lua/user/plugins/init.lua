@@ -43,6 +43,9 @@ require("lazy").setup({
 		},
 	},
 
+	-- terminal
+	{ "akinsho/toggleterm.nvim", version = "*", config = true },
+
 	-- LSP Configuration & Plugins
 	{
 		"neovim/nvim-lspconfig",
@@ -151,8 +154,8 @@ require("lazy").setup({
 	},
 
 	-- extras
-	"tpope/vim-sleuth", -- auto detect tab settings
-	{ "numToStr/Comment.nvim", opts = {} }, -- quick comment
+	"tpope/vim-sleuth",                    -- auto detect tab settings
+	{ "numToStr/Comment.nvim",   opts = {} }, -- quick comment
 	-- Add indentation guides even on blank lines
 	{
 		"lukas-reineke/indent-blankline.nvim",
@@ -176,18 +179,6 @@ require("lazy").setup({
 		opts = {},
 	},
 
-	-- note taking
-	{
-		"epwalsh/obsidian.nvim",
-		lazy = true,
-		event = { "BufReadPre " .. vim.fn.expand("~") .. "/Documents/Notes/Notes/**.md" },
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-		opts = {
-			dir = "~/Documents/Notes/Notes", -- no need to call 'vim.fn.expand' here
-		},
-	},
 })
 
 require("user.plugins.configs.telescope")
