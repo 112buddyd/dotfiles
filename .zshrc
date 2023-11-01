@@ -26,15 +26,8 @@ alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 fpath=(~/.zshrc/completion $fpath)
 autoload -Uz compinit && compinit -i
 
-# pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
-    eval "$(pyenv init -)"
-fi
-
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# RTX
+eval "$(/usr/local/bin/rtx activate zsh)"
 
 # Rust
 export PATH="$PATH:$HOME/.cargo/bin"
