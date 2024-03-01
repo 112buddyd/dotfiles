@@ -26,8 +26,8 @@ alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 fpath=(~/.zshrc/completion $fpath)
 autoload -Uz compinit && compinit -i
 
-# RTX
-eval "$(/usr/local/bin/rtx activate zsh)"
+# MISE, formerly RTX
+eval "$(/usr/local/bin/mise activate zsh)"
 
 # Rust
 export PATH="$PATH:$HOME/.cargo/bin"
