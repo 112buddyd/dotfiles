@@ -36,6 +36,8 @@ return {
 					"lua",
 					"vim",
 					"gitignore",
+          "ruby",
+          "java"
 				},
 				incremental_selection = {
 					enable = true,

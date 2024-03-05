@@ -36,6 +36,11 @@ if [[ `uname` == "Darwin" ]]; then
 else
 	eval "$(/home/buddy/.local/bin/mise activate zsh)"
 	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  source ~/.rvm/scripts/rvm
+
 fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

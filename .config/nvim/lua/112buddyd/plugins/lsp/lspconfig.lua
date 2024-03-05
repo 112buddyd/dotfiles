@@ -70,14 +70,25 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
+
     -- configure typescript server with plugin
     lspconfig["tsserver"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
-    -- configure python server
+    lspconfig["ruff_lsp"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
     lspconfig["pyright"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    -- configure solargraph for ruby
+    lspconfig["solargraph"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
@@ -102,5 +113,6 @@ return {
         },
       },
     })
+
   end,
 }
