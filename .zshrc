@@ -26,7 +26,6 @@ alias ll='ls -la'
 fpath=(~/.zshrc/completion $fpath)
 autoload -Uz compinit && compinit -i
 
-
 # Rust
 export PATH="$PATH:$HOME/.cargo/bin"
 
@@ -37,6 +36,7 @@ else
 	eval "$(/home/buddy/.local/bin/mise activate zsh)"
 	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   source ~/.rvm/scripts/rvm
+  export PATH="$PATH:$HOME/bin"
 
 fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
