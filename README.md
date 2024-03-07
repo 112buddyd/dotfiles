@@ -1,18 +1,6 @@
-## To Clone, run these commands
-
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
-echo ".dotfiles" >> .gitignore
-
-
-git clone --bare git@github.com:112buddyd/dotfiles.git $HOME/.dotfiles
-
-
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
-
-dotfiles checkout
-
-
-dotfiles config --local status.showUntrackedFiles no
-
+1. Install [Stow](https://www.gnu.org/software/stow)
+1. Clone this repo, I prefer `~/dotfiles`.
+1. Remove original dotfiles from your $HOME that would be duplicated - .zshrc, .config/, etc
+1. Create symlinks by running `stow ~/dotfiles`
+1. ???
+1. Profit

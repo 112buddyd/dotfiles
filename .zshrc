@@ -20,7 +20,7 @@ alias vi='nvim'
 alias vim='nvim'
 alias cls='clear'
 alias ll='ls -la'
-alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+# alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 # Autocompletion
 fpath=(~/.zshrc/completion $fpath)
