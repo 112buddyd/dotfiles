@@ -24,6 +24,7 @@ alias ll='ls -la'
 
 # Autocompletion
 fpath=(~/.zshrc/completion $fpath)
+fpath+=~/.zfunc
 autoload -Uz compinit && compinit -i
 
 # Rust
