@@ -1,2 +1,4 @@
 exercism/
 lazygit/
+tmux/
+!tmux/tmux.conf
