@@ -6,6 +6,20 @@ return {
 		"nvim-tree/nvim-web-devicons",
 		"MunifTanjim/nui.nvim",
 	},
+	init = function()
+		vim.api.nvim_create_autocmd("BufEnter", {
+			-- make a group to be able to delete it later
+			group = vim.api.nvim_create_augroup("NeoTreeInit", { clear = true }),
+			callback = function()
+				local f = vim.fn.expand("%:p")
+				if vim.fn.isdirectory(f) ~= 0 then
+					vim.cmd("Neotree current dir=" .. f)
+					-- neo-tree is loaded now, delete the init autocmd
+					vim.api.nvim_clear_autocmds({ group = "NeoTreeInit" })
+				end
+			end,
+		})
+	end,
 	config = function()
 		-- If you want icons for diagnostic errors, you'll need to define them somewhere:
 		vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })
@@ -188,7 +202,7 @@ return {
 					leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
 				},
 				group_empty_dirs = false, -- when true, empty folders will be grouped together
-				hijack_netrw_behavior = "open_default", -- netrw disabled, opening a directory opens neo-tree
+				hijack_netrw_behavior = "open_current", -- netrw disabled, opening a directory opens neo-tree
 				-- in whatever position is specified in window.position
 				-- "open_current",  -- netrw disabled, opening a directory opens within the
 				-- window like netrw would, regardless of window.position
