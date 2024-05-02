@@ -27,12 +27,13 @@ return {
 		mason_lspconfig.setup({
 			-- list of servers for mason to install
 			ensure_installed = {
-				"tsserver",
 				"lua_ls",
-				"solargraph",
-				"ruff_lsp",
+				"gopls",
 				"pyright",
+				"ruff_lsp",
 				"rust_analyzer",
+				"solargraph",
+				"tsserver",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
@@ -40,8 +41,8 @@ return {
 
 		mason_tool_installer.setup({
 			ensure_installed = {
-				"stylua", -- lua formatter
 				"eslint_d", -- js linter
+				"stylua", -- lua formatter
 				"prettier",
 			},
 		})

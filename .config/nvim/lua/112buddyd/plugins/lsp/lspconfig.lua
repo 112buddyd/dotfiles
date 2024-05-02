@@ -70,32 +70,12 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
-		-- configure typescript server with plugin
-		lspconfig["tsserver"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		lspconfig["ruff_lsp"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		lspconfig["rust_analyzer"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		lspconfig["pyright"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		-- configure solargraph for ruby
-		lspconfig["solargraph"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
+		lspconfig["gopls"].setup({ capabilities = capabilities, on_attach = on_attach })
+		lspconfig["pyright"].setup({ capabilities = capabilities, on_attach = on_attach })
+		lspconfig["ruff_lsp"].setup({ capabilities = capabilities, on_attach = on_attach })
+		lspconfig["rust_analyzer"].setup({ capabilities = capabilities, on_attach = on_attach })
+		lspconfig["solargraph"].setup({ capabilities = capabilities, on_attach = on_attach })
+		lspconfig["tsserver"].setup({ capabilities = capabilities, on_attach = on_attach })
 
 		-- configure lua server (with special settings)
 		lspconfig["lua_ls"].setup({
