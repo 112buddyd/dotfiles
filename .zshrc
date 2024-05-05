@@ -23,9 +23,11 @@ autoload -Uz compinit && compinit -i
 # Rust
 export PATH="$PATH:$HOME/.cargo/bin"
 
+
 # check if on a mac or linux 
 if [[ `uname` == "Darwin" ]]; then
-	eval "$(/usr/local/bin/mise activate zsh)"
+  eval "$(/usr/local/bin/mise activate zsh)"
+  export PATH="/usr/local/opt/ruby/bin:$PATH"
 else
 	eval "$(/home/buddy/.local/bin/mise activate zsh)"
 	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -33,8 +35,8 @@ else
   export PATH="$PATH:$HOME/bin"
   eval "$(atuin init zsh)"
   export PATH="$PATH:$HOME/.rvm/bin"
-
 fi
+
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
