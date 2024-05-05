@@ -1,15 +1,9 @@
-# oh-my-zsh stuff
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="powerlevel10k/powerlevel10k"
-zstyle ':omz:update' mode auto      # update automatically without asking
-ZSH_DISABLE_COMPFI="true"
-plugins=(git)
-source $ZSH/oh-my-zsh.sh
-# end oh-my-zsh stuff
+source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
+
 
 # Env Vars
 export EDITOR='nvim'
@@ -20,7 +14,6 @@ alias vi='nvim'
 alias vim='nvim'
 alias cls='clear'
 alias ll='ls -la'
-# alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 # Autocompletion
 fpath=(~/.zshrc/completion $fpath)
