@@ -2,3 +2,5 @@ exercism/
 lazygit/
 tmux/
 !tmux/tmux.conf
+.config/alacritty/themes
+.config/iterm2
