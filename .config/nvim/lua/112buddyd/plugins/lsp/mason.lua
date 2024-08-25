@@ -28,11 +28,11 @@ return {
 			-- list of servers for mason to install
 			ensure_installed = {
 				"lua_ls",
-				"gopls",
+				-- "gopls",
 				"pyright",
 				"ruff_lsp",
 				"rust_analyzer",
-				"solargraph",
+				-- "solargraph",
 				"tsserver",
 			},
 			-- auto-install configured servers (with lspconfig)

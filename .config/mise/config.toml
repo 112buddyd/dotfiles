@@ -1,4 +1,4 @@
 [tools]
+go = "latest"
 python = "3.12"
 node = "latest"
-go = "latest"
