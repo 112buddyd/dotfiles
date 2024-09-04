@@ -32,7 +32,6 @@ return {
 				"pyright",
 				"ruff_lsp",
 				"rust_analyzer",
-				"solargraph",
 				"tsserver",
 			},
 			-- auto-install configured servers (with lspconfig)

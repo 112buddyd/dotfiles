@@ -1,9 +1,5 @@
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
-
+# Amazon Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 
 # Env Vars
 export EDITOR='nvim'
@@ -20,23 +16,21 @@ fpath=(~/.zshrc/completion $fpath)
 fpath+=~/.zfunc
 autoload -Uz compinit && compinit -i
 
+# Mise
+eval "$(~/.local/bin/mise activate zsh)"
+
 # Rust
 export PATH="$PATH:$HOME/.cargo/bin"
 
+# FZF - fuzzy finding
+source <(fzf --zsh)
 
-# check if on a mac or linux 
-if [[ `uname` == "Darwin" ]]; then
-  eval "$(/usr/local/bin/mise activate zsh)"
-  export PATH="/usr/local/opt/ruby/bin:$PATH"
-else
-	eval "$(/home/buddy/.local/bin/mise activate zsh)"
-	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  source ~/.rvm/scripts/rvm
-  export PATH="$PATH:$HOME/bin"
-  eval "$(atuin init zsh)"
-  export PATH="$PATH:$HOME/.rvm/bin"
-fi
+# Atuin - shell history
+. "$HOME/.atuin/bin/env"
+eval "$(atuin init zsh)"
 
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# Starship
+eval "$(starship init zsh)"
 
-
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
