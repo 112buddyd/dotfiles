@@ -6,10 +6,9 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 
 # Aliases
-alias vi='nvim'
-alias vim='nvim'
 alias cls='clear'
 alias ll='ls -la'
+alias dotfiles=""
 
 # Autocompletion
 fpath=(~/.zshrc/completion $fpath)
